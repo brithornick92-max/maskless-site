@@ -258,7 +258,7 @@
     }
 
     /* ===================
-       MODAL STYLING
+       MODAL STYLING (updated coral + floating X)
        =================== */
     dialog {
         border: none;
@@ -269,58 +269,65 @@
         max-height: 85vh;
         box-shadow: var(--shadow-hard);
         background: var(--ivory);
-        position: relative; /* for the close-x */
     }
     dialog::backdrop {
         background: rgba(42, 45, 49, 0.4);
         backdrop-filter: blur(4px);
     }
-
-    /* Make footer always visible:
-       modal-body is a column; content flexes & scrolls; footer stays at bottom */
     .modal-body {
         display: flex;
         flex-direction: column;
+        height: 100%;
         max-height: 85vh;
+        position: relative; /* for the floating X */
     }
     .modal-content {
         padding: 32px;
-        overflow: auto;
+        overflow-y: auto;
         font-family: var(--font-main);
-        flex: 1 1 auto;   /* key line */
-        min-height: 0;    /* prevents overflow issues in flex containers */
     }
     .modal-content h1 { color: var(--aquadark); font-size: 2rem; }
     .modal-content h2 { color: var(--charcoal); font-size: 1.25rem; margin-top: 1.5rem;}
     .modal-footer {
-        padding: 16px 24px 20px;
+        padding: 16px 32px 24px;
         background: var(--ivory);
         border-top: 1px solid rgba(0,0,0,0.05);
         display: flex;
         justify-content: flex-end;
+        position: sticky; bottom: 0;
     }
-
     .btn-close {
-        background: var(--coral);
+        background: var(--coral);  /* coral button */
         color: white;
         border: none;
         padding: 10px 20px;
-        border-radius: 10px;
+        border-radius: 8px;
         cursor: pointer;
-        font-weight: 700;
+        font-weight: 600;
         font-family: var(--font-main);
     }
-    .btn-close:hover { filter: brightness(0.95); }
+    .btn-close:hover { filter: brightness(0.92); }
 
-    /* Top-right coral X button (backup close) */
-    .close-x{
-      position:absolute; top:10px; right:12px;
-      width:36px; height:36px; border-radius:999px;
-      border:none; background:var(--coral); color:white;
-      font-size:20px; line-height:36px; font-weight:800;
-      cursor:pointer;
+    /* floating top-right X */
+    .close-x {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: var(--coral);
+      color: #fff;
+      font-size: 22px;
+      line-height: 36px;
+      text-align: center;
+      font-weight: 800;
+      box-shadow: 0 6px 12px rgba(0,0,0,.15);
     }
-    .close-x:hover{ filter: brightness(0.95); }
+    .close-x:focus { outline: 2px solid rgba(0,0,0,.2); outline-offset: 2px; }
+    .close-x:hover { filter: brightness(0.92); }
 
     /* ===================
        FAQ ACCORDION
@@ -601,10 +608,10 @@
     <a href="mailto:support@masklessapp.com">Contact</a>
   </footer>
 
-  <!-- TERMS -->
+  <!-- ===== TERMS dialog ===== -->
   <dialog id="dlg-terms" aria-modal="true">
-    <button class="close-x" type="button" onclick="this.closest('dialog').close()" aria-label="Close dialog">×</button>
     <article class="modal-body">
+      <button class="close-x" type="button" onclick="this.closest('dialog').close()" aria-label="Close">×</button>
       <div class="modal-content" data-slot="terms">
         <main class="wrap">
           <h1>Terms of Use</h1>
@@ -816,10 +823,10 @@
     </article>
   </dialog>
 
-  <!-- PRIVACY -->
+  <!-- ===== PRIVACY dialog ===== -->
   <dialog id="dlg-privacy" aria-modal="true">
-    <button class="close-x" type="button" onclick="this.closest('dialog').close()" aria-label="Close dialog">×</button>
     <article class="modal-body">
+      <button class="close-x" type="button" onclick="this.closest('dialog').close()" aria-label="Close">×</button>
       <div class="modal-content" data-slot="privacy">
         <main class="wrap">
           <h1>Privacy Policy</h1>
@@ -994,10 +1001,10 @@
     </article>
   </dialog>
 
-  <!-- FAQ -->
+  <!-- ===== FAQ dialog ===== -->
   <dialog id="dlg-faq" aria-modal="true">
-    <button class="close-x" type="button" onclick="this.closest('dialog').close()" aria-label="Close dialog">×</button>
     <article class="modal-body">
+      <button class="close-x" type="button" onclick="this.closest('dialog').close()" aria-label="Close">×</button>
       <div class="modal-content" data-slot="faq">
         <main class="wrap">
           <h1>Maskless – Frequently Asked Questions</h1>
