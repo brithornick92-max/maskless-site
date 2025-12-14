@@ -559,7 +559,7 @@
     </div>
   </section>
 
-  <footer class="wrapper" id="download">
+    <footer class="wrapper" id="download">
     <div class="foot">
       <h2>Download Maskless</h2>
       <p class="sub" style="margin-top:-4px">Join adults (18+) finding calm and connection.</p>
@@ -576,11 +576,11 @@
   </footer>
 
   <footer id="utility-links" class="footer-links">
-    <a href="javascript:void(0)" onclick="openModal('faq')">FAQ</a>
+    <a href="javascript:void(0)" onclick="return openModal('faq', event)">FAQ</a>
     <span class="divider">•</span>
-    <a href="javascript:void(0)" onclick="openModal('terms')">Terms</a>
+    <a href="javascript:void(0)" onclick="return openModal('terms', event)">Terms</a>
     <span class="divider">•</span>
-    <a href="javascript:void(0)" onclick="openModal('privacy')">Privacy</a>
+    <a href="javascript:void(0)" onclick="return openModal('privacy', event)">Privacy</a>
     <span class="divider">•</span>
     <a href="mailto:support@masklessapp.com">Contact</a>
   </footer>
@@ -1073,18 +1073,27 @@
   </dialog>
 
   <script>
-    function openModal(id){
+    function openModal(id, evt){
+      if (evt) evt.preventDefault();
       const dlg = document.getElementById('dlg-' + id);
-      if (!dlg) return;
-      if (typeof dlg.showModal === 'function') dlg.showModal();
-      else dlg.setAttribute('open', '');
+      if (!dlg) return false;
+
+      if (typeof dlg.showModal === 'function') {
+        try { dlg.showModal(); }
+        catch (e) { dlg.setAttribute('open', ''); dlg.style.display = 'block'; }
+      } else {
+        dlg.setAttribute('open', '');
+        dlg.style.display = 'block';
+      }
+      return false; // stop link navigation
     }
     
     document.querySelectorAll('dialog').forEach(dlg => {
       dlg.addEventListener('click', (e) => {
         if (e.target === dlg) {
           if (typeof dlg.close === 'function') dlg.close();
-          else dlg.removeAttribute('open');
+          dlg.removeAttribute('open');
+          dlg.style.display = '';
         }
       });
     });
@@ -1093,7 +1102,8 @@
       if (e.key === 'Escape') {
         document.querySelectorAll('dialog[open]').forEach(d => {
           if (typeof d.close === 'function') d.close();
-          else d.removeAttribute('open');
+          d.removeAttribute('open');
+          d.style.display = '';
         });
       }
     });
