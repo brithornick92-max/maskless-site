@@ -1,25 +1,18 @@
 [build]
   publish = "."
 
-# HTML should never be cached
+# ---------- Security headers ----------
 [[headers]]
-  for = "/*.html"
+  for = "/*"
   [headers.values]
-    Cache-Control = "no-store"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 
-# Also catch the root index.html
-[[headers]]
-  for = "/"
-  [headers.values]
-    Cache-Control = "no-store"
-
-# Legal pages if they’re in a /legal folder
-[[headers]]
-  for = "/legal/*"
-  [headers.values]
-    Cache-Control = "no-store"
-
-# Static assets: cache hard + immutable (use ?v=… when you update)
+# ---------- Caching ----------
+# Long cache for versioned assets
 [[headers]]
   for = "/assets/*"
   [headers.values]
@@ -30,8 +23,28 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Optional: SVGs not under /assets or /images
+# Never cache HTML
 [[headers]]
-  for = "/*.svg"
+  for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "no-store"
+
+# ---------- Redirects ----------
+# Force HTTPS (Netlify handles cert) and canonical to apex
+[[redirects]]
+  from = "http://www.masklessapp.com/*"
+  to = "https://masklessapp.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://masklessapp.com/*"
+  to = "https://masklessapp.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.masklessapp.com/*"
+  to = "https://masklessapp.com/:splat"
+  status = 301
+  force = true
