@@ -224,7 +224,7 @@
       align-items:center;
     }
     .store-badges img{
-      height:80px;   /* ↑ was 60px */
+      height:80px;   /* bigger badges */
       width:auto;
       display:block;
       transition: opacity 0.2s, transform .15s ease;
@@ -383,7 +383,7 @@
         gap: 10px;
       }
       .store-badges img{
-        height:64px; /* ↑ was 56px */
+        height:64px; /* mobile size */
       }
 
       #dlg-faq .modal-content .wrap{ padding: 10px 6px; }
@@ -575,19 +575,19 @@
     </div>
   </footer>
 
-  <!-- Tiny bottom footer links (classic style) -->
+  <!-- Tiny bottom footer links (no # jump; opens dialogs) -->
   <footer id="utility-links" class="footer-links">
-    <a href="#" data-open="faq">FAQ</a>
+    <a href="#" onclick="event.preventDefault(); openModal('faq');">FAQ</a>
     <span class="divider">•</span>
-    <a href="#" data-open="terms">Terms</a>
+    <a href="#" onclick="event.preventDefault(); openModal('terms');">Terms</a>
     <span class="divider">•</span>
-    <a href="#" data-open="privacy">Privacy</a>
+    <a href="#" onclick="event.preventDefault(); openModal('privacy');">Privacy</a>
     <span class="divider">•</span>
     <a href="mailto:support@masklessapp.com">Contact</a>
   </footer>
 
   <!-- Modals (INLINE CONTENT) -->
-  <dialog id="dlg-terms">
+  <dialog id="dlg-terms" aria-modal="true">
     <article class="modal-body">
       <div class="modal-content" data-slot="terms">
         <!-- ===== TERMS (inline) ===== -->
@@ -641,7 +641,6 @@
             <p>All posts must include an image (e.g., your own photo or an allowed AI/gallery image). We may limit distribution or reject posts without an image.</p>
           </section>
 
-          <!-- ID made unique -->
           <section id="terms-explicit-content">
             <h2>8) Explicit/Sexual Content, Blur &amp; Feed Routing</h2>
             <ul>
@@ -804,7 +803,7 @@
     </article>
   </dialog>
 
-  <dialog id="dlg-privacy">
+  <dialog id="dlg-privacy" aria-modal="true">
     <article class="modal-body">
       <div class="modal-content" data-slot="privacy">
         <!-- ===== PRIVACY (inline) ===== -->
@@ -882,7 +881,6 @@
             <p>Other users see your username and the content you choose to share. They never see device identifiers, IP addresses, or precise location.</p>
           </section>
           
-          <!-- ID made unique -->
           <section id="privacy-explicit-content">
             <h2>5) Explicit/Sexual Content, Blur &amp; Routing</h2>
             <ul>
@@ -985,7 +983,7 @@
     </article>
   </dialog>
 
-  <dialog id="dlg-faq">
+  <dialog id="dlg-faq" aria-modal="true">
     <article class="modal-body">
       <div class="modal-content" data-slot="faq">
         <!-- ===== FAQ (inline) ===== -->
@@ -1086,28 +1084,23 @@
   </dialog>
 
   <script>
-    // Robust modal opener with fallback (works even if <dialog>.showModal() isn't supported)
+    // Modal open helper
     function openModal(id){
       const dlg = document.getElementById('dlg-' + id);
       if (!dlg) return;
-
-      if (typeof dlg.showModal === 'function') {
-        dlg.showModal();
-      } else {
-        // Fallback for older browsers: just show the dialog by adding [open]
-        dlg.setAttribute('open', '');
-      }
+      if (typeof dlg.showModal === 'function') dlg.showModal();
+      else dlg.setAttribute('open', '');
     }
 
-    // Delegate clicks for any [data-open] trigger (FAQ / Terms / Privacy)
+    // (Optional) delegated listener still fine for any [data-open] elements on page
     document.addEventListener('click', function(e){
       const trigger = e.target.closest('[data-open]');
       if(!trigger) return;
-      e.preventDefault(); // stop the scroll-to-top from href="#"
+      e.preventDefault();
       openModal(trigger.getAttribute('data-open'));
     });
     
-    // Close modal on backdrop click (works for both native & fallback)
+    // Close modal on backdrop click
     document.querySelectorAll('dialog').forEach(dlg => {
       dlg.addEventListener('click', (e) => {
         if (e.target === dlg) {
@@ -1117,7 +1110,7 @@
       });
     });
 
-    // Close any open dialog on ESC (works for both native & fallback)
+    // Close any open dialog on ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         document.querySelectorAll('dialog[open]').forEach(d => {
