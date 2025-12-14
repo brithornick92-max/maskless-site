@@ -1,0 +1,37 @@
+[build]
+  publish = "."
+
+# HTML should never be cached
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-store"
+
+# Also catch the root index.html
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-store"
+
+# Legal pages if they’re in a /legal folder
+[[headers]]
+  for = "/legal/*"
+  [headers.values]
+    Cache-Control = "no-store"
+
+# Static assets: cache hard + immutable (use ?v=… when you update)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Optional: SVGs not under /assets or /images
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
