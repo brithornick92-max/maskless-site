@@ -279,6 +279,7 @@
         flex-direction: column;
         height: 100%;
         max-height: 85vh;
+        position: relative; /* for the coral X */
     }
     .modal-content {
         padding: 32px;
@@ -295,8 +296,10 @@
         justify-content: flex-end;
         position: sticky; bottom: 0;
     }
+
+    /* Footer "Close" button in coral */
     .btn-close {
-        background: var(--stone);
+        background: var(--coral);
         color: white;
         border: none;
         padding: 10px 20px;
@@ -305,7 +308,25 @@
         font-weight: 600;
         font-family: var(--font-main);
     }
-    .btn-close:hover { background: var(--charcoal); }
+    .btn-close:hover { background: #e85358; }
+
+    /* Top-right coral X button */
+    .modal-x {
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 36px; height: 36px;
+      border: none;
+      border-radius: 10px;
+      font-size: 22px; line-height: 1;
+      background: var(--coral);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 14px rgba(251,94,99,.25);
+    }
+    .modal-x:hover { background: #e85358; }
 
     /* ===================
        FAQ ACCORDION
@@ -559,568 +580,574 @@
     </div>
   </section>
 
-    <footer class="wrapper" id="download">
-  <div class="foot">
-    <h2>Download Maskless</h2>
-    <p class="sub" style="margin-top:-4px">Join adults (18+) finding calm and connection.</p>
-    
-    <div class="store-badges">
-      <a href="https://apps.apple.com/us/search?term=Maskless" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
-        <img src="/assets/badges/app-store.svg?v=2" alt="Download on the App Store">
-      </a>
-      <a href="https://play.google.com/store/search?q=Maskless&c=apps" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-        <img src="/assets/badges/google-play.svg?v=2" alt="Get it on Google Play">
-      </a>
+  <footer class="wrapper" id="download">
+    <div class="foot">
+      <h2>Download Maskless</h2>
+      <p class="sub" style="margin-top:-4px">Join adults (18+) finding calm and connection.</p>
+      
+      <div class="store-badges">
+        <a href="https://apps.apple.com/us/search?term=Maskless" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+          <img src="/assets/badges/app-store.svg?v=2" alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store/search?q=Maskless&c=apps" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+          <img src="/assets/badges/google-play.svg?v=2" alt="Get it on Google Play">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<footer id="utility-links" class="footer-links">
-  <!-- Real hrefs = SEO + fallback; data-modal lets JS open dialogs -->
-  <a href="/legal/faq.html?v=2" data-modal="faq">FAQ</a>
-  <span class="divider">•</span>
-  <a href="/legal/terms.html?v=2" data-modal="terms">Terms</a>
-  <span class="divider">•</span>
-  <a href="/legal/privacy.html?v=2" data-modal="privacy">Privacy</a>
-  <span class="divider">•</span>
-  <a href="mailto:support@masklessapp.com">Contact</a>
-</footer>
+  <footer id="utility-links" class="footer-links">
+    <!-- Real hrefs = SEO + fallback; data-modal lets JS open dialogs -->
+    <a href="/legal/faq.html?v=2" data-modal="faq">FAQ</a>
+    <span class="divider">•</span>
+    <a href="/legal/terms.html?v=2" data-modal="terms">Terms</a>
+    <span class="divider">•</span>
+    <a href="/legal/privacy.html?v=2" data-modal="privacy">Privacy</a>
+    <span class="divider">•</span>
+    <a href="mailto:support@masklessapp.com">Contact</a>
+  </footer>
 
-<dialog id="dlg-terms" aria-modal="true">
-  <article class="modal-body">
-    <div class="modal-content" data-slot="terms">
-      <main class="wrap">
-        <h1>Terms of Use</h1>
-        <p><strong>Effective Date:</strong> December 12, 2025<br>
-        <strong>Company:</strong> Maskless App LLC ("Maskless", "we", "us", "our")</p>
-
-        <section id="overview">
-          <h2>1) Overview</h2>
-          <p>These Terms of Use ("Terms") govern your access to and use of the Maskless mobile app, website, and related services (collectively, the "Service"). By using the Service, you agree to these Terms. If you do not agree, do not use the Service. You must be at least 18 years old.</p>
-        </section>
-
-        <section id="accounts">
-          <h2>2) Accounts &amp; Anonymity</h2>
-          <p>Maskless is designed for anonymous expression. You are identified within the Service by a username, which may be auto-generated; you can change it, and usernames are not guaranteed to be unique. We may maintain non-public technical identifiers (e.g., device tokens, IP addresses for security) as described in our Privacy Policy. You are responsible for your activity on the Service.</p>
-        </section>
-
-        <section id="acceptable-use">
-          <h2>3) Acceptable Use</h2>
-          <p>You agree not to:</p>
-          <ul>
-            <li>Violate any law or others' rights (including privacy, IP, publicity).</li>
-            <li>Post sexual content involving minors, sexualization of minors, or exploitative/non-consensual content.</li>
-            <li>Post threats, harassment, hateful or violent conduct, or encourage self-harm.</li>
-            <li>Post private or identifying information about other people without permission.</li>
-            <li>Post illegal content, incitement, or instructions for illegal acts.</li>
-            <li>Spam, scam, impersonate, or interfere with the Service's operation.</li>
-          </ul>
-          <p>See our Community Guidelines for examples. We may take action—including removal, suspension, or ban—at our sole discretion to protect users and the Service.</p>
-        </section>
-        
-        <section id="safety-crisis-care">
-          <h2>4) Safety; No Crisis Care</h2>
-          <p>Maskless is not therapy, medical, or crisis care. If you are in danger or experiencing a crisis, call local emergency services or a crisis hotline. Calming tools, journaling, or chats are informational only and not a substitute for professional advice.</p>
-        </section>
-
-        <section id="minor-safety">
-          <h2>5) Minor Safety; Age Limits</h2>
-          <p>The Service is for users 18+. We do not permit sexualization of minors or child endangerment and report suspected child sexual exploitation to authorities. <strong>We reserve the right to suspend or terminate any account we suspect is operated by a person under 18.</strong></p>
-        </section>
-
-        <section id="content-licenses">
-          <h2>6) Content &amp; Licenses</h2>
-          <p>You retain your rights to content you post. You grant Maskless a non-exclusive, worldwide, royalty-free license to host, store, reproduce, display, and distribute your content solely to operate and improve the Service (e.g., deliver your posts to other users, enforce safety systems, create backups). You represent you have necessary rights to post the content. We may remove or restrict content that violates these Terms or our guidelines.</p>
-        </section>
-
-        <section id="images-required">
-          <h2>7) Images Required for Posts</h2>
-          <p>All posts must include an image (e.g., your own photo or an allowed AI/gallery image). We may limit distribution or reject posts without an image.</p>
-        </section>
-
-        <section id="terms-explicit-content">
-          <h2>8) Explicit/Sexual Content, Blur &amp; Feed Routing</h2>
-          <ul>
-            <li><strong>Single toggle:</strong> Marking a post as "Explicit/Sexual" applies one combined label.</li>
-            <li><strong>Blur:</strong> Explicit posts are <strong>blurred by default</strong>; users may tap to reveal.</li>
-            <li><strong>Routing:</strong> Sexually explicit posts must appear in the <strong>Flirt/Play</strong> feed; the app enforces this based on your selection.</li>
-            <li><strong>Prohibited:</strong> sexual content involving minors, exploitation, non-consensual content, bestiality, and illegal content.</li>
-          </ul>
-        </section>
-
-        <section id="moderation-filters">
-          <h2>9) No Human Moderators; Automated Safety Filters</h2>
-          <p>Maskless does <strong>not</strong> use human moderators. Automated systems may scan text and images to apply blurs, flag or limit certain words/phrases, and restrict or remove unsafe content. You can block users, filter keywords, and report content. See the Privacy Policy for details.</p>
-        </section>
-
-        <section id="feeds-tools">
-          <h2>10) Feeds, Chats, and Tools</h2>
-          <ul>
-            <li><strong>Main feeds:</strong> Connect (main feed), Support, and Flirt/Play.</li>
-            <li><strong>Chats:</strong> one-to-one DMs.</li>
-            <li><strong>Calm:</strong> synced breathing circle, meditations with calming images/sounds, bubble tapping, and drawing tools.</li>
-            <li><strong>Check-In:</strong> mood, feelings, and body check; then tailored affirmation, suggested next steps, and journal prompt. An optional sexual set appears only if you select positive sexual feelings (and can be disabled at the top of Check-In).</li>
-          </ul>
-        </section>
-
-        <section id="intellectual-property">
-          <h2>11) Intellectual Property</h2>
-          <p>All Maskless IP (including code, UI, graphics, branding, and compilations) is owned by Maskless App LLC or its licensors and is protected by law. Except for your content and any rights expressly granted, all rights are reserved.</p>
-        </section>
-
-        <section id="feedback">
-          <h2>12) Feedback</h2>
-          <p>If you provide feedback or suggestions, you grant Maskless a perpetual, irrevocable, worldwide, royalty-free license to use them without obligation to you.</p>
-        </section>
-
-        <section id="third-party-services">
-          <h2>13) Third-Party Services</h2>
-          <p>The Service may link to or integrate content or services from third parties. Those are governed by their own terms and privacy policies. We are not responsible for them.</p>
-        </section>
-        
-        <section id="purchases">
-          <h2>14) In-App Purchases; Subscriptions; Refunds</h2>
-          <ul>
-            <li><strong>Auto-renewal:</strong> Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period.</li>
-            <li><strong>Manage/cancel:</strong> Manage or cancel in your device's subscription settings. Deleting the app does not cancel a subscription.</li>
-            <li><strong>Trials:</strong> If offered, trials convert to paid unless cancelled before the trial ends.</li>
-            <li><strong>Refunds:</strong> Refunds are handled by the platform (Apple/Google) per their policies. We may offer credits at our discretion but are not obligated to do so.</li>
-          </ul>
-        </section>
-
-        <section id="virtual-items">
-          <h2>15) Virtual Items; No Cash Value</h2>
-          <p>We may offer virtual items, tokens, boosts, or similar features. These are licensed, not sold; have no real-world monetary value; are non-transferable; and may be revoked, discontinued, or modified at any time. We are not obligated to provide refunds or compensation for unused items.</p>
-        </section>
-
-        <section id="content-retention">
-          <h2>16) Content Retention; Deletion; Backups</h2>
-          <p>You may delete your content from within the app where available. Residual copies may persist in backups for a limited time and in logs maintained for security, fraud prevention, or legal compliance. We may also preserve content as required by law or to enforce these Terms.</p>
-        </section>
-
-        <section id="location-features">
-          <h2>17) Location-Based Features</h2>
-          <p>Some features may use approximate location (e.g., to show local content). You control location permissions in device settings. Other users may see only an approximate distance—never exact coordinates or direction.</p>
-        </section>
-
-        <section id="electronic-communications">
-          <h2>18) Electronic Communications; Notifications</h2>
-          <p>You consent to receive in-app messages, push notifications, and emails related to your account, safety, updates, and legal notices. You can opt out of non-essential notifications in settings. Service or legal notices may still be delivered.</p>
-        </section>
-
-        <section id="service-changes">
-          <h2>19) Changes to the Service; Beta Features</h2>
-          <p>We may add, remove, or change features at any time. We may label some features as "beta," "labs," or "experimental"; these may be unstable or change without notice.</p>
-        </section>
-
-        <section id="disclaimers">
-          <h2>20) Disclaimers</h2>
-          <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR ACCURACY. WE DO NOT PROMISE THE SERVICE WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE.</p>
-        </section>
-
-        <section id="limitation-of-liability">
-          <h2>21) Limitation of Liability</h2>
-          <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, MASKLESS AND ITS AFFILIATES, OWNERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES; LOSS OF PROFITS, DATA, OR GOODWILL; OR SERVICE INTERRUPTION OR SYSTEM FAILURE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SERVICE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY FOR ANY CLAIM RELATING TO THE SERVICE WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS ($100).</p>
-        </section>
-
-        <section id="indemnity">
-          <h2>22) Indemnity</h2>
-          <p>You agree to defend, indemnify, and hold harmless Maskless from any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising from your content or your violation of these Terms or applicable law.</p>
-        </section>
-
-        <section id="dispute-resolution">
-          <h2>23) Governing Law; Dispute Resolution; Arbitration</h2>
-          <p>These Terms are governed by the laws of the State of Michigan, without regard to conflict of law rules.</p>
-          <p><strong>Binding Arbitration &amp; Class Action/Jury Waiver:</strong></p>
-          <ul>
-            <li>You and Maskless agree that any dispute arising out of or relating to these Terms or the Service will be resolved by binding arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules.</li>
-            <li><strong>YOU AND MASKLESS WAIVE ANY RIGHT TO A JURY TRIAL OR TO PARTICIPATE IN A CLASS ACTION.</strong> CLAIMS MUST BE BROUGHT INDIVIDUALLY.</li>
-            <li>Unless you and Maskless agree otherwise, the arbitration will take place in <strong>Oakland County, Michigan</strong>, or by remote/virtual proceedings, and the arbitrator may award relief consistent with applicable law.</li>
-            <li>You may opt out of arbitration within 30 days of first accepting these Terms by emailing <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a> with subject "Arbitration Opt-Out" and your device ID or account identifier.</li>
-          </ul>
-          <p><strong>Small-Claims Carve-Out:</strong> Either party may bring an individual action in small-claims court in <strong>Oakland County, Michigan</strong> (or your U.S. county of residence) for claims within that court's jurisdiction.</p>
-        </section>
-
-        <section id="changes-terms">
-          <h2>24) Changes to the Terms</h2>
-          <p>We may update these Terms. If changes are material, we will provide notice (e.g., in-app). Continued use after the effective date constitutes acceptance.</p>
-        </section>
-
-        <section id="termination">
-          <h2>25) Termination</h2>
-          <p>You may stop using the Service at any time. We may suspend or terminate access if you violate these Terms or if needed to protect users, comply with law, or address security.</p>
-        </section>
-        
-        <section id="export-controls">
-          <h2>26) Export Controls &amp; Sanctions</h2>
-          <p>You represent you are not located in, under the control of, or a national or resident of any country or entity subject to U.S. embargoes or sanctions, and you will not use the Service in violation of applicable export control or sanctions laws.</p>
-        </section>
-
-        <section id="government-use">
-          <h2>27) Government Use</h2>
-          <p>If accessed by or on behalf of a U.S. government entity, the Service is provided as "Commercial Computer Software" and use is subject to these Terms.</p>
-        </section>
-
-        <section id="assignment">
-          <h2>28) Assignment</h2>
-          <p>You may not assign or transfer these Terms without our prior written consent. We may assign these Terms in connection with a merger, acquisition, financing, or sale of assets.</p>
-        </section>
-
-        <section id="survival">
-          <h2>29) Severability; Waiver; Entire Agreement; Survival</h2>
-          <p>If any provision is found unenforceable, it will be limited to the minimum extent necessary, and the remaining provisions will remain in full force. Our failure to enforce any provision is not a waiver. These Terms, our Privacy Policy, and Community Guidelines constitute the entire agreement between you and Maskless. Sections concerning licenses, IP, disclaimers, limitation of liability, indemnity, arbitration, assignment, and survival survive termination.</p>
-        </section>
-        
-        <section id="dmca">
-          <h2>30) DMCA/Repeat Infringer Policy</h2>
-          <p>If you believe content infringes your rights, send a notice to <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a> including: (a) your contact info; (b) the work and allegedly infringing material (URLs/screenshots); (c) a statement under penalty of perjury that you have a good-faith belief the use is not authorized; (d) a statement that the notice is accurate and you are authorized to act; and (e) your signature. We may terminate accounts of repeat infringers.</p>
-        </section>
-
-        <section id="ai-disclosure">
-          <h2>31) AI &amp; Generated Media Disclosure</h2>
-          <p>Parts of the Service may use automated systems (e.g., machine learning or generative AI) to generate images, text, or recommendations, and to assist with safety filtering. AI outputs may be inaccurate or incomplete and are provided "as is." You remain responsible for your use of any AI-assisted output (including obtaining rights and avoiding prohibited content). You agree not to attempt to re-identify anonymous users using AI or otherwise.</p>
-        </section>
-
-        <section id="community-moderation">
-          <h2>32) Community Moderation; Appeals</h2>
-          <p>We may remove content, limit visibility (e.g., down-ranking or filtering), or restrict accounts when we believe there's a risk of harm or a violation of these Terms or our Community Guidelines. If you believe we made a mistake, you may appeal by emailing <a href="mailto:support@masklessapp.com">support@masklessapp.com</a> with "Appeal" and your device ID or account identifier. We may require additional information to review your appeal. We are not obligated to restore content or access.</p>
-        </section>
-
-        <section id="contact-terms">
-          <h2>33) Contact</h2>
-          <p>Maskless App LLC<br>
-            Email: <a href="mailto:support@masklessapp.com">support@masklessapp.com</a> and <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a></p>
-        </section>
-      </main>
-    </div>
-    <div class="modal-footer">
-        <button class="btn-close" type="button" onclick="this.closest('dialog').close()">Close</button>
-    </div>
-  </article>
-</dialog>
-
-<dialog id="dlg-privacy" aria-modal="true">
-  <article class="modal-body">
-    <div class="modal-content" data-slot="privacy">
-      <main class="wrap">
-        <h1>Privacy Policy</h1>
-        <p><strong>Effective Date:</strong> December 12, 2025<br>
+  <!-- TERMS -->
+  <dialog id="dlg-terms" aria-modal="true">
+    <article class="modal-body">
+      <button class="modal-x" type="button" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+      <div class="modal-content" data-slot="terms">
+        <main class="wrap">
+          <h1>Terms of Use</h1>
+          <p><strong>Effective Date:</strong> December 12, 2025<br>
           <strong>Company:</strong> Maskless App LLC ("Maskless", "we", "us", "our")</p>
 
-        <p>This Privacy Policy explains how we collect, use, and share information when you use the Maskless app, website, and related services ("Service"). Maskless is built for anonymous expression; we intentionally minimize what we collect.</p>
+          <section id="overview">
+            <h2>1) Overview</h2>
+            <p>These Terms of Use ("Terms") govern your access to and use of the Maskless mobile app, website, and related services (collectively, the "Service"). By using the Service, you agree to these Terms. If you do not agree, do not use the Service. You must be at least 18 years old.</p>
+          </section>
 
-        <section id="information-we-collect">
-          <h2>1) Information We Collect</h2>
+          <section id="accounts">
+            <h2>2) Accounts &amp; Anonymity</h2>
+            <p>Maskless is designed for anonymous expression. You are identified within the Service by a username, which may be auto-generated; you can change it, and usernames are not guaranteed to be unique. We may maintain non-public technical identifiers (e.g., device tokens, IP addresses for security) as described in our Privacy Policy. You are responsible for your activity on the Service.</p>
+          </section>
 
-          <h3>A) Account &amp; Profile</h3>
+          <section id="acceptable-use">
+            <h2>3) Acceptable Use</h2>
+            <p>You agree not to:</p>
+            <ul>
+              <li>Violate any law or others' rights (including privacy, IP, publicity).</li>
+              <li>Post sexual content involving minors, sexualization of minors, or exploitative/non-consensual content.</li>
+              <li>Post threats, harassment, hateful or violent conduct, or encourage self-harm.</li>
+              <li>Post private or identifying information about other people without permission.</li>
+              <li>Post illegal content, incitement, or instructions for illegal acts.</li>
+              <li>Spam, scam, impersonate, or interfere with the Service's operation.</li>
+            </ul>
+            <p>See our Community Guidelines for examples. We may take action—including removal, suspension, or ban—at our sole discretion to protect users and the Service.</p>
+          </section>
+          
+          <section id="safety-crisis-care">
+            <h2>4) Safety; No Crisis Care</h2>
+            <p>Maskless is not therapy, medical, or crisis care. If you are in danger or experiencing a crisis, call local emergency services or a crisis hotline. Calming tools, journaling, or chats are informational only and not a substitute for professional advice.</p>
+          </section>
+
+          <section id="minor-safety">
+            <h2>5) Minor Safety; Age Limits</h2>
+            <p>The Service is for users 18+. We do not permit sexualization of minors or child endangerment and report suspected child sexual exploitation to authorities. <strong>We reserve the right to suspend or terminate any account we suspect is operated by a person under 18.</strong></p>
+          </section>
+
+          <section id="content-licenses">
+            <h2>6) Content &amp; Licenses</h2>
+            <p>You retain your rights to content you post. You grant Maskless a non-exclusive, worldwide, royalty-free license to host, store, reproduce, display, and distribute your content solely to operate and improve the Service (e.g., deliver your posts to other users, enforce safety systems, create backups). You represent you have necessary rights to post the content. We may remove or restrict content that violates these Terms or our guidelines.</p>
+          </section>
+
+          <section id="images-required">
+            <h2>7) Images Required for Posts</h2>
+            <p>All posts must include an image (e.g., your own photo or an allowed AI/gallery image). We may limit distribution or reject posts without an image.</p>
+          </section>
+
+          <section id="terms-explicit-content">
+            <h2>8) Explicit/Sexual Content, Blur &amp; Feed Routing</h2>
+            <ul>
+              <li><strong>Single toggle:</strong> Marking a post as "Explicit/Sexual" applies one combined label.</li>
+              <li><strong>Blur:</strong> Explicit posts are <strong>blurred by default</strong>; users may tap to reveal.</li>
+              <li><strong>Routing:</strong> Sexually explicit posts must appear in the <strong>Flirt/Play</strong> feed; the app enforces this based on your selection.</li>
+              <li><strong>Prohibited:</strong> sexual content involving minors, exploitation, non-consensual content, bestiality, and illegal content.</li>
+            </ul>
+          </section>
+
+          <section id="moderation-filters">
+            <h2>9) No Human Moderators; Automated Safety Filters</h2>
+            <p>Maskless does <strong>not</strong> use human moderators. Automated systems may scan text and images to apply blurs, flag or limit certain words/phrases, and restrict or remove unsafe content. You can block users, filter keywords, and report content. See the Privacy Policy for details.</p>
+          </section>
+
+          <section id="feeds-tools">
+            <h2>10) Feeds, Chats, and Tools</h2>
+            <ul>
+              <li><strong>Main feeds:</strong> Connect (main feed), Support, and Flirt/Play.</li>
+              <li><strong>Chats:</strong> one-to-one DMs.</li>
+              <li><strong>Calm:</strong> synced breathing circle, meditations with calming images/sounds, bubble tapping, and drawing tools.</li>
+              <li><strong>Check-In:</strong> mood, feelings, and body check; then tailored affirmation, suggested next steps, and journal prompt. An optional sexual set appears only if you select positive sexual feelings (and can be disabled at the top of Check-In).</li>
+            </ul>
+          </section>
+
+          <section id="intellectual-property">
+            <h2>11) Intellectual Property</h2>
+            <p>All Maskless IP (including code, UI, graphics, branding, and compilations) is owned by Maskless App LLC or its licensors and is protected by law. Except for your content and any rights expressly granted, all rights are reserved.</p>
+          </section>
+
+          <section id="feedback">
+            <h2>12) Feedback</h2>
+            <p>If you provide feedback or suggestions, you grant Maskless a perpetual, irrevocable, worldwide, royalty-free license to use them without obligation to you.</p>
+          </section>
+
+          <section id="third-party-services">
+            <h2>13) Third-Party Services</h2>
+            <p>The Service may link to or integrate content or services from third parties. Those are governed by their own terms and privacy policies. We are not responsible for them.</p>
+          </section>
+          
+          <section id="purchases">
+            <h2>14) In-App Purchases; Subscriptions; Refunds</h2>
+            <ul>
+              <li><strong>Auto-renewal:</strong> Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period.</li>
+              <li><strong>Manage/cancel:</strong> Manage or cancel in your device's subscription settings. Deleting the app does not cancel a subscription.</li>
+              <li><strong>Trials:</strong> If offered, trials convert to paid unless cancelled before the trial ends.</li>
+              <li><strong>Refunds:</strong> Refunds are handled by the platform (Apple/Google) per their policies. We may offer credits at our discretion but are not obligated to do so.</li>
+            </ul>
+          </section>
+
+          <section id="virtual-items">
+            <h2>15) Virtual Items; No Cash Value</h2>
+            <p>We may offer virtual items, tokens, boosts, or similar features. These are licensed, not sold; have no real-world monetary value; are non-transferable; and may be revoked, discontinued, or modified at any time. We are not obligated to provide refunds or compensation for unused items.</p>
+          </section>
+
+          <section id="content-retention">
+            <h2>16) Content Retention; Deletion; Backups</h2>
+            <p>You may delete your content from within the app where available. Residual copies may persist in backups for a limited time and in logs maintained for security, fraud prevention, or legal compliance. We may also preserve content as required by law or to enforce these Terms.</p>
+          </section>
+
+          <section id="location-features">
+            <h2>17) Location-Based Features</h2>
+            <p>Some features may use approximate location (e.g., to show local content). You control location permissions in device settings. Other users may see only an approximate distance—never exact coordinates or direction.</p>
+          </section>
+
+          <section id="electronic-communications">
+            <h2>18) Electronic Communications; Notifications</h2>
+            <p>You consent to receive in-app messages, push notifications, and emails related to your account, safety, updates, and legal notices. You can opt out of non-essential notifications in settings. Service or legal notices may still be delivered.</p>
+          </section>
+
+          <section id="service-changes">
+            <h2>19) Changes to the Service; Beta Features</h2>
+            <p>We may add, remove, or change features at any time. We may label some features as "beta," "labs," or "experimental"; these may be unstable or change without notice.</p>
+          </section>
+
+          <section id="disclaimers">
+            <h2>20) Disclaimers</h2>
+            <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR ACCURACY. WE DO NOT PROMISE THE SERVICE WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE.</p>
+          </section>
+
+          <section id="limitation-of-liability">
+            <h2>21) Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, MASKLESS AND ITS AFFILIATES, OWNERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES; LOSS OF PROFITS, DATA, OR GOODWILL; OR SERVICE INTERRUPTION OR SYSTEM FAILURE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SERVICE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY FOR ANY CLAIM RELATING TO THE SERVICE WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS ($100).</p>
+          </section>
+
+          <section id="indemnity">
+            <h2>22) Indemnity</h2>
+            <p>You agree to defend, indemnify, and hold harmless Maskless from any claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising from your content or your violation of these Terms or applicable law.</p>
+          </section>
+
+          <section id="dispute-resolution">
+            <h2>23) Governing Law; Dispute Resolution; Arbitration</h2>
+            <p>These Terms are governed by the laws of the State of Michigan, without regard to conflict of law rules.</p>
+            <p><strong>Binding Arbitration &amp; Class Action/Jury Waiver:</strong></p>
+            <ul>
+              <li>You and Maskless agree that any dispute arising out of or relating to these Terms or the Service will be resolved by binding arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules.</li>
+              <li><strong>YOU AND MASKLESS WAIVE ANY RIGHT TO A JURY TRIAL OR TO PARTICIPATE IN A CLASS ACTION.</strong> CLAIMS MUST BE BROUGHT INDIVIDUALLY.</li>
+              <li>Unless you and Maskless agree otherwise, the arbitration will take place in <strong>Oakland County, Michigan</strong>, or by remote/virtual proceedings, and the arbitrator may award relief consistent with applicable law.</li>
+              <li>You may opt out of arbitration within 30 days of first accepting these Terms by emailing <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a> with subject "Arbitration Opt-Out" and your device ID or account identifier.</li>
+            </ul>
+            <p><strong>Small-Claims Carve-Out:</strong> Either party may bring an individual action in small-claims court in <strong>Oakland County, Michigan</strong> (or your U.S. county of residence) for claims within that court's jurisdiction.</p>
+          </section>
+
+          <section id="changes-terms">
+            <h2>24) Changes to the Terms</h2>
+            <p>We may update these Terms. If changes are material, we will provide notice (e.g., in-app). Continued use after the effective date constitutes acceptance.</p>
+          </section>
+
+          <section id="termination">
+            <h2>25) Termination</h2>
+            <p>You may stop using the Service at any time. We may suspend or terminate access if you violate these Terms or if needed to protect users, comply with law, or address security.</p>
+          </section>
+          
+          <section id="export-controls">
+            <h2>26) Export Controls &amp; Sanctions</h2>
+            <p>You represent you are not located in, under the control of, or a national or resident of any country or entity subject to U.S. embargoes or sanctions, and you will not use the Service in violation of applicable export control or sanctions laws.</p>
+          </section>
+
+          <section id="government-use">
+            <h2>27) Government Use</h2>
+            <p>If accessed by or on behalf of a U.S. government entity, the Service is provided as "Commercial Computer Software" and use is subject to these Terms.</p>
+          </section>
+
+          <section id="assignment">
+            <h2>28) Assignment</h2>
+            <p>You may not assign or transfer these Terms without our prior written consent. We may assign these Terms in connection with a merger, acquisition, financing, or sale of assets.</p>
+          </section>
+
+          <section id="survival">
+            <h2>29) Severability; Waiver; Entire Agreement; Survival</h2>
+            <p>If any provision is found unenforceable, it will be limited to the minimum extent necessary, and the remaining provisions will remain in full force. Our failure to enforce any provision is not a waiver. These Terms, our Privacy Policy, and Community Guidelines constitute the entire agreement between you and Maskless. Sections concerning licenses, IP, disclaimers, limitation of liability, indemnity, arbitration, assignment, and survival survive termination.</p>
+          </section>
+          
+          <section id="dmca">
+            <h2>30) DMCA/Repeat Infringer Policy</h2>
+            <p>If you believe content infringes your rights, send a notice to <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a> including: (a) your contact info; (b) the work and allegedly infringing material (URLs/screenshots); (c) a statement under penalty of perjury that you have a good-faith belief the use is not authorized; (d) a statement that the notice is accurate and you are authorized to act; and (e) your signature. We may terminate accounts of repeat infringers.</p>
+          </section>
+
+          <section id="ai-disclosure">
+            <h2>31) AI &amp; Generated Media Disclosure</h2>
+            <p>Parts of the Service may use automated systems (e.g., machine learning or generative AI) to generate images, text, or recommendations, and to assist with safety filtering. AI outputs may be inaccurate or incomplete and are provided "as is." You remain responsible for your use of any AI-assisted output (including obtaining rights and avoiding prohibited content). You agree not to attempt to re-identify anonymous users using AI or otherwise.</p>
+          </section>
+
+          <section id="community-moderation">
+            <h2>32) Community Moderation; Appeals</h2>
+            <p>We may remove content, limit visibility (e.g., down-ranking or filtering), or restrict accounts when we believe there's a risk of harm or a violation of these Terms or our Community Guidelines. If you believe we made a mistake, you may appeal by emailing <a href="mailto:support@masklessapp.com">support@masklessapp.com</a> with "Appeal" and your device ID or account identifier. We may require additional information to review your appeal. We are not obligated to restore content or access.</p>
+          </section>
+
+          <section id="contact-terms">
+            <h2>33) Contact</h2>
+            <p>Maskless App LLC<br>
+              Email: <a href="mailto:support@masklessapp.com">support@masklessapp.com</a> and <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a></p>
+          </section>
+        </main>
+      </div>
+      <div class="modal-footer">
+          <button class="btn-close" type="button" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </article>
+  </dialog>
+
+  <!-- PRIVACY -->
+  <dialog id="dlg-privacy" aria-modal="true">
+    <article class="modal-body">
+      <button class="modal-x" type="button" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+      <div class="modal-content" data-slot="privacy">
+        <main class="wrap">
+          <h1>Privacy Policy</h1>
+          <p><strong>Effective Date:</strong> December 12, 2025<br>
+            <strong>Company:</strong> Maskless App LLC ("Maskless", "we", "us", "our")</p>
+
+          <p>This Privacy Policy explains how we collect, use, and share information when you use the Maskless app, website, and related services ("Service"). Maskless is built for anonymous expression; we intentionally minimize what we collect.</p>
+
+          <section id="information-we-collect">
+            <h2>1) Information We Collect</h2>
+
+            <h3>A) Account &amp; Profile</h3>
+            <ul>
+              <li>Anonymous username (auto-generated; you may change it; not guaranteed unique)</li>
+              <li>Optional profile elements (e.g., avatar)</li>
+            </ul>
+
+            <h3>B) Content You Provide</h3>
+            <ul>
+              <li>Posts, <strong>images (required)</strong>, comments, reactions/likes, shares</li>
+              <li>Direct messages (Chats)</li>
+              <li>Support emails/messages you send to us</li>
+              <li>Settings and preferences (blocks, keyword filters, safety toggles)</li>
+            </ul>
+
+            <h3>C) Calm &amp; Check-In Inputs</h3>
+            <ul>
+              <li><strong>Calm:</strong> breathwork patterns you configure; usage of meditations, calming images/sounds, bubble tapping, and drawing tools</li>
+              <li><strong>Check-In:</strong> mood, feelings, and body check selections used to generate your affirmation, suggested steps, and journal prompt (an optional sexual set appears only when applicable and enabled)</li>
+            </ul>
+
+            <h3>D) Device &amp; Log Information</h3>
+            <ul>
+              <li>Device identifiers (internal token), app/OS version, crash logs, diagnostics</li>
+              <li>IP address and approximate location derived from IP (for security/safety)</li>
+              <li>Usage data (features used, timestamps)</li>
+            </ul>
+
+            <h3>E) Optional Access (with permission)</h3>
+            <ul>
+              <li>Photo library (to choose an image)</li>
+              <li>Camera/microphone (if you use a feature that needs them)</li>
+              <li>Precise location only if you enable a feature that requires it (e.g., local proximity)</li>
+            </ul>
+          </section>
+
+          <section id="how-we-use">
+            <h2>2) How We Use Information</h2>
+            <ul>
+              <li>Provide, maintain, and improve the Service (deliver posts/DMs; render and store images)</li>
+              <li>Apply <strong>automated safety filters</strong> (blur explicit content; flag/limit certain words/phrases; restrict distribution when appropriate)</li>
+              <li>Personalize Calm and Check-In outputs from your inputs (affirmations, suggested steps, journal prompts; sexual set only when applicable and enabled)</li>
+              <li>Prevent fraud/abuse, protect users, and enforce Terms/Guidelines</li>
+              <li>Troubleshooting, analytics, and product development</li>
+              <li>Legal compliance</li>
+            </ul>
+          </section>
+
+          <section id="sharing">
+            <h2>3) Sharing</h2>
+            <ul>
+              <li><strong>Service providers:</strong> hosting, storage, delivery, analytics, crash reporting—under instructions and appropriate safeguards</li>
+              <li><strong>Legal/safety:</strong> when required by law or needed to prevent harm</li>
+              <li><strong>Business transfers:</strong> successors/affiliates in a merger/acquisition with protections</li>
+              <li><strong>No sale:</strong> we do not sell personal information</li>
+            </ul>
+          </section>
+
+          <section id="anonymity">
+            <h2>4) Anonymity &amp; What Other Users See</h2>
+            <p>Other users see your username and the content you choose to share. They never see device identifiers, IP addresses, or precise location.</p>
+          </section>
+          
+          <section id="privacy-explicit-content">
+            <h2>5) Explicit/Sexual Content, Blur &amp; Routing</h2>
+            <ul>
+              <li><strong>Single toggle:</strong> one checkbox for "Explicit/Sexual."</li>
+              <li><strong>Blurred by default:</strong> explicit posts are blurred with a tap-to-reveal interstitial.</li>
+              <li><strong>Routing:</strong> sexually explicit posts must appear in the <strong>Flirt/Play</strong> feed; the app enforces this.</li>
+              <li><strong>Prohibited:</strong> sexual content involving minors, exploitation, non-consensual material, and illegal content.</li>
+            </ul>
+          </section>
+
+          <section id="no-human-mods">
+            <h2>6) No Human Moderators; Automated Safety</h2>
+            <p>We do <strong>not</strong> use human moderators. Automated systems may scan text and images to enforce rules (e.g., blur explicit content; flag/limit certain words/phrases; restrict distribution of unsafe material). You can block users, filter keywords, and report content.</p>
+          </section>
+
+          <section id="location">
+            <h2>7) Location</h2>
+            <p>By default, we do not collect precise location. If you enable a location-based feature, we ask permission and process only what's needed. Other users may see an <strong>approximate distance</strong>—not exact coordinates or direction. You can revoke location access in device settings.</p>
+          </section>
+
+          <section id="permissions">
+            <h2>8) Photos, Camera, Microphone, and Files</h2>
+            <p>With permission, we access only what a feature needs (e.g., a photo you pick). Content is uploaded only when you choose to share it. You can revoke permissions any time.</p>
+          </section>
+
+          <section id="notifications">
+            <h2>9) Push Notifications &amp; Tokens</h2>
+            <p>If you enable notifications, your device's push token is used only to deliver messages you opt into (e.g., replies, safety alerts). You can turn notifications off in device or in-app settings.</p>
+          </section>
+
+          <section id="analytics">
+            <h2>10) Analytics, Diagnostics &amp; Crash Reports</h2>
+            <p>We use privacy-respecting analytics and diagnostics to understand feature performance and fix issues (e.g., crash reports, error logs, performance metrics). Where required, we obtain consent and you can adjust analytics preferences in Settings. Analytics data is de-identified or aggregated where possible.</p>
+          </section>
+
+          <section id="cookies">
+            <h2>11) Cookies (Website Only)</h2>
+            <p>Our website may use cookies or similar technologies for core functionality, analytics, and security. Manage preferences via your browser and any site banner. The mobile app does not use web cookies.</p>
+          </section>
+          
+          <section id="your-choices">
+            <h2>12) Your Choices &amp; Controls</h2>
+            <ul>
+              <li>Update your username and preferences in the app</li>
+              <li>Delete your posts; request account deletion via <a href="mailto:support@masklessapp.com">support@masklessapp.com</a></li>
+              <li>Enable/disable the Check-In sexual set; hide sexual feelings</li>
+              <li>Use keyword filters; block or report users</li>
+              <li>Manage location permissions in device settings</li>
+              <li>Manage subscriptions in App Store/Google Play settings</li>
+              <li>Depending on your region (GDPR/CCPA/etc.), request access, correction, deletion, portability, or objection via <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a></li>
+            </ul>
+          </section>
+
+          <section id="data-retention">
+            <h2>13) Data Retention</h2>
+            <ul>
+              <li><strong>Posts/media:</strong> until you delete them; residual copies may persist in backups for up to ~90 days</li>
+              <li><strong>Account &amp; identifiers:</strong> while your account is active and up to 24 months after deletion</li>
+              <li><strong>Logs &amp; security data:</strong> typically 12–24 months (longer if needed for investigations/legal obligations)</li>
+            </ul>
+            <p>We may retain de-identified or aggregate data indefinitely.</p>
+          </section>
+
+          <section id="data-security">
+            <h2>14) Data Security</h2>
+            <p>We use reasonable administrative, technical, and physical safeguards, including encryption in transit and at rest where applicable. No system is 100% secure.</p>
+          </section>
+
+          <section id="children">
+            <h2>15) Children</h2>
+            <p>The Service is for adults 18+. We do not knowingly collect personal information from anyone under 18. Sexual content involving minors is strictly prohibited and may be reported to authorities.</p>
+          </section>
+
+          <section id="law-enforcement">
+            <h2>16) Law Enforcement &amp; Legal Requests</h2>
+            <p>We carefully review legal requests and disclose information only as required by law, court order, or to prevent imminent harm. We may notify affected users unless prohibited or unsafe.</p>
+          </section>
+
+          <section id="international-transfers">
+            <h2>17) International Transfers</h2>
+            <p>Your information may be processed and stored in the United States or other countries that may have different data protection laws than your country. Where required, we use appropriate safeguards (e.g., standard contractual clauses).</p>
+          </section>
+
+          <section id="changes-pp">
+            <h2>18) Changes</h2>
+            <p>We may update this Policy. When we do, we will revise the Effective Date and, if changes are material, provide additional notice (e.g., in-app). Continued use constitutes acceptance.</p>
+          </section>
+
+          <section id="contact-pp">
+            <h2>19) Contact</h2>
+            <p>Maskless App LLC<br>
+              Email: <a href="mailto:support@masklessapp.com">support@masklessapp.com</a> &nbsp;|&nbsp; <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a></p>
+          </section>
+        </main>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-close" type="button" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </article>
+  </dialog>
+
+  <!-- FAQ -->
+  <dialog id="dlg-faq" aria-modal="true">
+    <article class="modal-body">
+      <button class="modal-x" type="button" aria-label="Close" onclick="this.closest('dialog').close()">×</button>
+      <div class="modal-content" data-slot="faq">
+        <main class="wrap">
+          <h1>Maskless – Frequently Asked Questions</h1>
+          <p class="lead">Welcome to Maskless! Below you'll find answers to the most common questions about how the app works, how your anonymity is protected, and what you can expect from each feature.</p>
+
+        <details open>
+          <summary>What is Maskless? Who can use it?</summary>
+          <p>Maskless is an anonymous social-wellbeing app for adults (18+). It combines community support, connection, playful flirting, and calming tools all in one place. Every post is anonymous. No usernames or profiles are shown publicly.</p>
+        </details>
+
+        <details>
+          <summary>Do I need an account or login?</summary>
+          <p>You don't need a traditional public profile. Maskless creates a private, anonymous ID so your posts, likes, comments, follows, and chats stay connected to you without exposing who you are.</p>
+        </details>
+
+        <details>
+          <summary>Where do my posts appear?</summary>
+          <p>When you post, you choose your Vibe:</p>
           <ul>
-            <li>Anonymous username (auto-generated; you may change it; not guaranteed unique)</li>
-            <li>Optional profile elements (e.g., avatar)</li>
+            <li><strong>Connect</strong> — everyday thoughts, experiences, humor, general sharing</li>
+            <li><strong>Support</strong> — vulnerable moments, emotional help, compassionate responses</li>
+            <li><strong>Flirt</strong> — playful, lighthearted, or sexual content</li>
           </ul>
+        </details>
 
-          <h3>B) Content You Provide</h3>
+        <details>
+          <summary>Do I need an image to post?</summary>
+          <p><strong>Yes. All posts on Maskless require an image.</strong> Upload your own, choose one from your library, or generate an AI image inside the app.</p>
+        </details>
+
+        <details>
+          <summary>How does Explicit/Sexual content work?</summary>
+          <p>There's a single toggle: <strong>Explicit Content (includes sexual)</strong>.</p>
           <ul>
-            <li>Posts, <strong>images (required)</strong>, comments, reactions/likes, shares</li>
-            <li>Direct messages (Chats)</li>
-            <li>Support emails/messages you send to us</li>
-            <li>Settings and preferences (blocks, keyword filters, safety toggles)</li>
+            <li>If checked → your post is blurred by default (tap to reveal).</li>
+            <li>Sexually explicit posts must go in <strong>Flirt</strong>; non-sexual explicit can be in any feed if blurred.</li>
           </ul>
+        </details>
 
-          <h3>C) Calm &amp; Check-In Inputs</h3>
+        <details>
+          <summary>Are posts moderated by humans?</summary>
+          <p><strong>No human moderators.</strong> Automated systems blur explicit content, flag unsafe phrases, and limit distribution when needed. Users can block, filter keywords, and report content.</p>
+        </details>
+
+        <details>
+          <summary>What about comments, likes, and sharing?</summary>
+          <p>You can like and comment anonymously. Posts can be shared within the app.</p>
+        </details>
+
+        <details>
+          <summary>What are Chats?</summary>
+          <p>Private DMs for one-on-one conversation (with optional images), separate from the feeds.</p>
+        </details>
+
+        <details>
+          <summary>What's inside Calm?</summary>
           <ul>
-            <li><strong>Calm:</strong> breathwork patterns you configure; usage of meditations, calming images/sounds, bubble tapping, and drawing tools</li>
-            <li><strong>Check-In:</strong> mood, feelings, and body check selections used to generate your affirmation, suggested steps, and journal prompt (an optional sexual set appears only when applicable and enabled)</li>
+            <li>Synced Breathing Circle (customizable patterns)</li>
+            <li>Short meditations with calming images/sounds</li>
+            <li>Bubble-tapping relaxation</li>
+            <li>Drawing tools (pens, watercolor, charcoal, pastels)</li>
           </ul>
+        </details>
 
-          <h3>D) Device &amp; Log Information</h3>
-          <ul>
-            <li>Device identifiers (internal token), app/OS version, crash logs, diagnostics</li>
-            <li>IP address and approximate location derived from IP (for security/safety)</li>
-            <li>Usage data (features used, timestamps)</li>
-          </ul>
+        <details>
+          <summary>How does Check-In work?</summary>
+          <p>You pick your mood, feelings, and body sensations; you'll get an affirmation, suggested next steps, and a journal prompt. If you choose a positive sexual feeling (and enable sexual content), you'll get sexual versions of those.</p>
+        </details>
 
-          <h3>E) Optional Access (with permission)</h3>
-          <ul>
-            <li>Photo library (to choose an image)</li>
-            <li>Camera/microphone (if you use a feature that needs them)</li>
-            <li>Precise location only if you enable a feature that requires it (e.g., local proximity)</li>
-          </ul>
-        </section>
+        <details>
+          <summary>Can I follow people? What if someone makes me uncomfortable?</summary>
+          <p>Yes, you can follow others anonymously (and require approval if you prefer). You can block users, report content, and set keyword filters.</p>
+        </details>
 
-        <section id="how-we-use">
-          <h2>2) How We Use Information</h2>
-          <ul>
-            <li>Provide, maintain, and improve the Service (deliver posts/DMs; render and store images)</li>
-            <li>Apply <strong>automated safety filters</strong> (blur explicit content; flag/limit certain words/phrases; restrict distribution when appropriate)</li>
-            <li>Personalize Calm and Check-In outputs from your inputs (affirmations, suggested steps, journal prompts; sexual set only when applicable and enabled)</li>
-            <li>Prevent fraud/abuse, protect users, and enforce Terms/Guidelines</li>
-            <li>Troubleshooting, analytics, and product development</li>
-            <li>Legal compliance</li>
-          </ul>
-        </section>
+        <details>
+          <summary>Is Maskless truly anonymous?</summary>
+          <p>Yes. No public names or profiles. Other users never see your device info, IP, or precise location.</p>
+        </details>
 
-        <section id="sharing">
-          <h2>3) Sharing</h2>
-          <ul>
-            <li><strong>Service providers:</strong> hosting, storage, delivery, analytics, crash reporting—under instructions and appropriate safeguards</li>
-            <li><strong>Legal/safety:</strong> when required by law or needed to prevent harm</li>
-            <li><strong>Business transfers:</strong> successors/affiliates in a merger/acquisition with protections</li>
-            <li><strong>No sale:</strong> we do not sell personal information</li>
-          </ul>
-        </section>
+        <details>
+          <summary>Is it on iOS and Android? Do you collect my data?</summary>
+          <p>Yes—both stores. We minimize data and do not collect personal identity. Anonymous interactions are stored to run the app.</p>
+        </details>
 
-        <section id="anonymity">
-          <h2>4) Anonymity &amp; What Other Users See</h2>
-          <p>Other users see your username and the content you choose to share. They never see device identifiers, IP addresses, or precise location.</p>
-        </section>
-        
-        <section id="privacy-explicit-content">
-          <h2>5) Explicit/Sexual Content, Blur &amp; Routing</h2>
-          <ul>
-            <li><strong>Single toggle:</strong> one checkbox for "Explicit/Sexual."</li>
-            <li><strong>Blurred by default:</strong> explicit posts are blurred with a tap-to-reveal interstitial.</li>
-            <li><strong>Routing:</strong> sexually explicit posts must appear in the <strong>Flirt/Play</strong> feed; the app enforces this.</li>
-            <li><strong>Prohibited:</strong> sexual content involving minors, exploitation, non-consensual material, and illegal content.</li>
-          </ul>
-        </section>
+        <details>
+          <summary>Need help?</summary>
+          <p>Email: <a href="mailto:support@masklessapp.com">support@masklessapp.com</a></p>
+        </details>
+        </main>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-close" type="button" onclick="this.closest('dialog').close()">Close</button>
+      </div>
+    </article>
+  </dialog>
 
-        <section id="no-human-mods">
-          <h2>6) No Human Moderators; Automated Safety</h2>
-          <p>We do <strong>not</strong> use human moderators. Automated systems may scan text and images to enforce rules (e.g., blur explicit content; flag/limit certain words/phrases; restrict distribution of unsafe material). You can block users, filter keywords, and report content.</p>
-        </section>
+  <script>
+    // robust modal opener with graceful fallback to real pages
+    (function () {
+      const supportsDialog = typeof window.HTMLDialogElement === 'function';
 
-        <section id="location">
-          <h2>7) Location</h2>
-          <p>By default, we do not collect precise location. If you enable a location-based feature, we ask permission and process only what's needed. Other users may see an <strong>approximate distance</strong>—not exact coordinates or direction. You can revoke location access in device settings.</p>
-        </section>
-
-        <section id="permissions">
-          <h2>8) Photos, Camera, Microphone, and Files</h2>
-          <p>With permission, we access only what a feature needs (e.g., a photo you pick). Content is uploaded only when you choose to share it. You can revoke permissions any time.</p>
-        </section>
-
-        <section id="notifications">
-          <h2>9) Push Notifications &amp; Tokens</h2>
-          <p>If you enable notifications, your device's push token is used only to deliver messages you opt into (e.g., replies, safety alerts). You can turn notifications off in device or in-app settings.</p>
-        </section>
-
-        <section id="analytics">
-          <h2>10) Analytics, Diagnostics &amp; Crash Reports</h2>
-          <p>We use privacy-respecting analytics and diagnostics to understand feature performance and fix issues (e.g., crash reports, error logs, performance metrics). Where required, we obtain consent and you can adjust analytics preferences in Settings. Analytics data is de-identified or aggregated where possible.</p>
-        </section>
-
-        <section id="cookies">
-          <h2>11) Cookies (Website Only)</h2>
-          <p>Our website may use cookies or similar technologies for core functionality, analytics, and security. Manage preferences via your browser and any site banner. The mobile app does not use web cookies.</p>
-        </section>
-        
-        <section id="your-choices">
-          <h2>12) Your Choices &amp; Controls</h2>
-          <ul>
-            <li>Update your username and preferences in the app</li>
-            <li>Delete your posts; request account deletion via <a href="mailto:support@masklessapp.com">support@masklessapp.com</a></li>
-            <li>Enable/disable the Check-In sexual set; hide sexual feelings</li>
-            <li>Use keyword filters; block or report users</li>
-            <li>Manage location permissions in device settings</li>
-            <li>Manage subscriptions in App Store/Google Play settings</li>
-            <li>Depending on your region (GDPR/CCPA/etc.), request access, correction, deletion, portability, or objection via <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a></li>
-          </ul>
-        </section>
-
-        <section id="data-retention">
-          <h2>13) Data Retention</h2>
-          <ul>
-            <li><strong>Posts/media:</strong> until you delete them; residual copies may persist in backups for up to ~90 days</li>
-            <li><strong>Account &amp; identifiers:</strong> while your account is active and up to 24 months after deletion</li>
-            <li><strong>Logs &amp; security data:</strong> typically 12–24 months (longer if needed for investigations/legal obligations)</li>
-          </ul>
-          <p>We may retain de-identified or aggregate data indefinitely.</p>
-        </section>
-
-        <section id="data-security">
-          <h2>14) Data Security</h2>
-          <p>We use reasonable administrative, technical, and physical safeguards, including encryption in transit and at rest where applicable. No system is 100% secure.</p>
-        </section>
-
-        <section id="children">
-          <h2>15) Children</h2>
-          <p>The Service is for adults 18+. We do not knowingly collect personal information from anyone under 18. Sexual content involving minors is strictly prohibited and may be reported to authorities.</p>
-        </section>
-
-        <section id="law-enforcement">
-          <h2>16) Law Enforcement &amp; Legal Requests</h2>
-          <p>We carefully review legal requests and disclose information only as required by law, court order, or to prevent imminent harm. We may notify affected users unless prohibited or unsafe.</p>
-        </section>
-
-        <section id="international-transfers">
-          <h2>17) International Transfers</h2>
-          <p>Your information may be processed and stored in the United States or other countries that may have different data protection laws than your country. Where required, we use appropriate safeguards (e.g., standard contractual clauses).</p>
-        </section>
-
-        <section id="changes-pp">
-          <h2>18) Changes</h2>
-          <p>We may update this Policy. When we do, we will revise the Effective Date and, if changes are material, provide additional notice (e.g., in-app). Continued use constitutes acceptance.</p>
-        </section>
-
-        <section id="contact-pp">
-          <h2>19) Contact</h2>
-          <p>Maskless App LLC<br>
-            Email: <a href="mailto:support@masklessapp.com">support@masklessapp.com</a> &nbsp;|&nbsp; <a href="mailto:legal@masklessapp.com">legal@masklessapp.com</a></p>
-        </section>
-      </main>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-close" type="button" onclick="this.closest('dialog').close()">Close</button>
-    </div>
-  </article>
-</dialog>
-
-<dialog id="dlg-faq" aria-modal="true">
-  <article class="modal-body">
-    <div class="modal-content" data-slot="faq">
-      <main class="wrap">
-        <h1>Maskless – Frequently Asked Questions</h1>
-        <p class="lead">Welcome to Maskless! Below you'll find answers to the most common questions about how the app works, how your anonymity is protected, and what you can expect from each feature.</p>
-
-      <details open>
-        <summary>What is Maskless? Who can use it?</summary>
-        <p>Maskless is an anonymous social-wellbeing app for adults (18+). It combines community support, connection, playful flirting, and calming tools all in one place. Every post is anonymous. No usernames or profiles are shown publicly.</p>
-      </details>
-
-      <details>
-        <summary>Do I need an account or login?</summary>
-        <p>You don't need a traditional public profile. Maskless creates a private, anonymous ID so your posts, likes, comments, follows, and chats stay connected to you without exposing who you are.</p>
-      </details>
-
-      <details>
-        <summary>Where do my posts appear?</summary>
-        <p>When you post, you choose your Vibe:</p>
-        <ul>
-          <li><strong>Connect</strong> — everyday thoughts, experiences, humor, general sharing</li>
-          <li><strong>Support</strong> — vulnerable moments, emotional help, compassionate responses</li>
-          <li><strong>Flirt</strong> — playful, lighthearted, or sexual content</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Do I need an image to post?</summary>
-        <p><strong>Yes. All posts on Maskless require an image.</strong> Upload your own, choose one from your library, or generate an AI image inside the app.</p>
-      </details>
-
-      <details>
-        <summary>How does Explicit/Sexual content work?</summary>
-        <p>There's a single toggle: <strong>Explicit Content (includes sexual)</strong>.</p>
-        <ul>
-          <li>If checked → your post is blurred by default (tap to reveal).</li>
-          <li>Sexually explicit posts must go in <strong>Flirt</strong>; non-sexual explicit can be in any feed if blurred.</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Are posts moderated by humans?</summary>
-        <p><strong>No human moderators.</strong> Automated systems blur explicit content, flag unsafe phrases, and limit distribution when needed. Users can block, filter keywords, and report content.</p>
-      </details>
-
-      <details>
-        <summary>What about comments, likes, and sharing?</summary>
-        <p>You can like and comment anonymously. Posts can be shared within the app.</p>
-      </details>
-
-      <details>
-        <summary>What are Chats?</summary>
-        <p>Private DMs for one-on-one conversation (with optional images), separate from the feeds.</p>
-      </details>
-
-      <details>
-        <summary>What's inside Calm?</summary>
-        <ul>
-          <li>Synced Breathing Circle (customizable patterns)</li>
-          <li>Short meditations with calming images/sounds</li>
-          <li>Bubble-tapping relaxation</li>
-          <li>Drawing tools (pens, watercolor, charcoal, pastels)</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>How does Check-In work?</summary>
-        <p>You pick your mood, feelings, and body sensations; you'll get an affirmation, suggested next steps, and a journal prompt. If you choose a positive sexual feeling (and enable sexual content), you'll get sexual versions of those.</p>
-      </details>
-
-      <details>
-        <summary>Can I follow people? What if someone makes me uncomfortable?</summary>
-        <p>Yes, you can follow others anonymously (and require approval if you prefer). You can block users, report content, and set keyword filters.</p>
-      </details>
-
-      <details>
-        <summary>Is Maskless truly anonymous?</summary>
-        <p>Yes. No public names or profiles. Other users never see your device info, IP, or precise location.</p>
-      </details>
-
-      <details>
-        <summary>Is it on iOS and Android? Do you collect my data?</summary>
-        <p>Yes—both stores. We minimize data and do not collect personal identity. Anonymous interactions are stored to run the app.</p>
-      </details>
-
-      <details>
-        <summary>Need help?</summary>
-        <p>Email: <a href="mailto:support@masklessapp.com">support@masklessapp.com</a></p>
-      </details>
-      </main>
-    </div>
-    <div class="modal-footer">
-      <button class="btn-close" type="button" onclick="this.closest('dialog').close()">Close</button>
-    </div>
-  </article>
-</dialog>
-
-<script>
-  // robust modal opener with graceful fallback to real pages
-  (function () {
-    const supportsDialog = typeof window.HTMLDialogElement === 'function';
-
-    function openModal(id){
-      const dlg = document.getElementById('dlg-' + id);
-      if (!dlg) return;
-      if (supportsDialog && typeof dlg.showModal === 'function') {
-        dlg.showModal();
-      } else {
-        dlg.setAttribute('open', '');
+      function openModal(id){
+        const dlg = document.getElementById('dlg-' + id);
+        if (!dlg) return;
+        if (supportsDialog && typeof dlg.showModal === 'function') {
+          dlg.showModal();
+        } else {
+          dlg.setAttribute('open', '');
+        }
       }
-    }
 
-    // Intercept footer link clicks only when we can show a dialog
-    const util = document.getElementById('utility-links');
-    if (util) {
-      util.addEventListener('click', (e) => {
-        const a = e.target.closest('a[data-modal]');
-        if (!a) return;
-        if (supportsDialog) {
-          e.preventDefault();
-          openModal(a.getAttribute('data-modal'));
-        }
-      });
-    }
-
-    // Close when clicking backdrop
-    document.querySelectorAll('dialog').forEach(dlg => {
-      dlg.addEventListener('click', (e) => {
-        if (e.target === dlg) {
-          if (typeof dlg.close === 'function') dlg.close();
-          else dlg.removeAttribute('open');
-        }
-      });
-    });
-
-    // ESC closes any open dialog
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('dialog[open]').forEach(d => {
-          if (typeof d.close === 'function') d.close();
-          else d.removeAttribute('open');
+      // Intercept footer link clicks only when we can show a dialog
+      const util = document.getElementById('utility-links');
+      if (util) {
+        util.addEventListener('click', (e) => {
+          const a = e.target.closest('a[data-modal]');
+          if (!a) return;
+          if (supportsDialog) {
+            e.preventDefault();
+            openModal(a.getAttribute('data-modal'));
+          }
         });
       }
-    });
-  })();
-</script>
+
+      // Close when clicking backdrop
+      document.querySelectorAll('dialog').forEach(dlg => {
+        dlg.addEventListener('click', (e) => {
+          if (e.target === dlg) {
+            if (typeof dlg.close === 'function') dlg.close();
+            else dlg.removeAttribute('open');
+          }
+        });
+      });
+
+      // ESC closes any open dialog
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('dialog[open]').forEach(d => {
+            if (typeof d.close === 'function') d.close();
+            else d.removeAttribute('open');
+          });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
